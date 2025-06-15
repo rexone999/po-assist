@@ -1,0 +1,37 @@
+{
+  "name": "PO Assist - AI Story Generator",
+  "description": "Generate EPICs and User Stories from BRDs using AI",
+  "key": "po-assist-fast-v1",
+  "baseUrl": "https://v0-jira-epic-generator.vercel.app",
+  "vendor": {
+    "name": "PO Assist",
+    "url": "https://v0-jira-epic-generator.vercel.app"
+  },
+  "authentication": {
+    "type": "none"
+  },
+  "lifecycle": {
+    "installed": "/api/atlassian/installed",
+    "uninstalled": "/api/atlassian/uninstalled"
+  },
+  "apiVersion": 1,
+  "modules": {
+    "generalPages": [
+      {
+        "key": "po-assist-main",
+        "location": "system.top.navigation.bar",
+        "name": {
+          "value": "PO Assist"
+        },
+        "url": "/jira-fast",
+        "conditions": [
+          {
+            "condition": "user_is_logged_in"
+          }
+        ]
+      }
+    ]
+  },
+  "scopes": ["READ"],
+  "contexts": ["account"]
+}
